@@ -8,6 +8,9 @@
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
 	display: none;
+	font-family: verdana, sans-serif;
+	font-weight: normal;
+	font-size: 11px;
 }	
 
 #tooltip_spike {
