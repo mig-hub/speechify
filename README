@@ -27,6 +27,18 @@ The code of the plugin itself is once again very basic, and would be easy to mod
 
 Of course you can. Any contribution is considered in order to make this plugin better, more complete or easier to use.
 
+= KNOWN ISSUES
+
+It does not mean that you can't use older versions, but Speechify has been tested with :
+
+jQuery 1.3.2
+Safari 4.0.2
+Firefox 3.0.15
+IE8 (puke)
+
+There are CSS3 features (rounded corners) but that should not break the plugin without CSS2.
+The only known issue is when using it on a textfield on Firefox. No big deal but it shows spike and tooltip at the wrong place when rolling other the top edge. 
+
 -
 
 Copyright (c) 2009 Mickael Riga. See MIT_LICENSE file for details.
