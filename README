@@ -1,0 +1,32 @@
+“The Times is speechless, and it takes three columns to express its speechlessness” -- Winston Churchill
+
+"Montre au-dehors, toute l'ardeur de ton désir, en sorte 
+qu'elle jaillisse, portant fidèlement l'empreinte de ton âme; non pour que tes paroles 
+fassent mieux connaître ce que nous savons déjà, mais pour que tu t'habitues à dire 
+quelle est ta soif, afin que l'on te verse à boire." -- Dante
+
+= WHAT IS IT ?
+
+The main idea is to have a system in place without any configuration to do. No other CSS or image to add. The plugin already contains everything. And if you need to customize it, you can just change the picture or the CSS file. I think it's better to do that than having tons of options that makes the code heavier and harder to use for the alpha user. The plugin is actualy 40 lines of code.
+
+= HOW TO USE IT ?
+
+Just add the plugin after the jQuery library, and it's gonna turn all the elements of your page that have got a title field into a speechified field.
+
+See the file example.html for more details.
+
+= HOW CAN I CUSTOMIZE IT ?
+
+This is very simple. The CSS file is pretty basic and can be changed to the style you want.
+
+The only other file is the image of the spike. As you can see, this is also very basic, just a gif. The only thing to say is that it has this special shape because i thought that somebody would like to play with the code and place the spike differently (top, left...). So the shape of the image allows that.
+
+The code of the plugin itself is once again very basic, and would be easy to modify, should you have to.
+
+= CAN I HELP ?
+
+Of course you can. Any contribution is considered in order to make this plugin better, more complete or easier to use.
+
+-
+
+Copyright (c) 2009 Mickael Riga. See MIT_LICENSE file for details.
