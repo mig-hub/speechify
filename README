@@ -11,7 +11,7 @@ The main idea is to have a system in place without any configuration to do. No o
 
 = HOW TO USE IT ?
 
-Just add the plugin after the jQuery library, and it's gonna turn all the elements of your page that have got a title field into a speechified field.
+Just put speechify in your JS folder, add the plugin after the jQuery library, and it's gonna turn all the elements of your page that have got a title field into a speechified field.
 
 See the file example.html for more details.
 
