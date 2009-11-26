@@ -3,19 +3,18 @@ speechify_path = $('script[src*=speechify.js]').attr('src').replace(/[^\/]*$/, '
 spike_file = speechify_path + 'tooltip_spike.gif'; // Url of the spike
 $('script:last').after("<link rel='stylesheet' type='text/css' href='" + speechify_path + "tooltip.css' />"); // Add CSS file
 
-$("body").append("<img src='" + spike_file + "' id='tooltip_spike' /><p id='tooltip'>" + $(this).data('speech') + "</p>"); // Add tooltip and spike to page
-
 ;(function($) {
 	$.fn.speechify = function() {
 		
 		return this.each(function() {
 			$(this).data('speech', this.title);
 			this.title = ''; // Empty the title to disable the default tooltip
-			$(this).hover(function(e){ // Rollover								  							  
+			$(this).hover(function(e){ // Rollover
+				$("body").append("<img src='" + spike_file + "' id='tooltip_spike' /><p id='tooltip'>" + $(this).data('speech') + "</p>"); // Add tooltip and spike to page							  							  
 				$("#tooltip, #tooltip_spike").show();		
 		    },
 				function(){		
-					$("#tooltip, #tooltip_spike").hide();
+					$("#tooltip, #tooltip_spike").remove();
 		  });
 			$(this).mousemove(function(e){ // Position
 				$("#tooltip_spike")
