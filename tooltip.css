@@ -1,0 +1,16 @@
+#tooltip{
+	position: absolute;
+	border: 0;
+	margin-bottom: 8px;
+	background-color: black;
+	padding: 5px;
+	color: white;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	display: none;
+}	
+
+#tooltip_spike {
+	position: absolute;
+	display: none;
+}
