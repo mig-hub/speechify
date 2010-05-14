@@ -4,7 +4,13 @@ spike_file = speechify_path + 'tooltip_spike.gif'; // Url of the spike
 $('script:last').after("<link rel='stylesheet' type='text/css' href='" + speechify_path + "tooltip.css' />"); // Add CSS file
 
 ;(function($) {
-	$.fn.speechify = function() {
+	$.fn.speechify = function(options) {
+		
+		// Settings
+		var defaults = {
+			colorBehindTooltip: 'white',
+		};
+		var settings = $.extend({}, defaults, options);
 		
 		return this.each(function() {
 			$(this).data('speech', this.title);
@@ -29,14 +35,27 @@ $('script:last').after("<link rel='stylesheet' type='text/css' href='" + speechi
 			});
 		});
 	}
+	
+	$.speechify = function(options) {
+		// Assign elements with a non-blank title field
+		// You might overwrite this if you want to use livequery or whatever
+		// But i keep this for the ease of use
+		$(function() {
+			if ($.fn.livequery) {
+				$('*[title]').livequery(function() {
+					if ($(this).attr('title')!='') {
+						$(this).speechify(options);
+					}
+				});
+			} else {
+				$('*[title]').each(function() {
+					if ($(this).attr('title')!='') {
+						$(this).speechify(options);
+					}
+				});
+			}
+		});	
+		
+	}
+	
 })(jQuery);
-// Assign elements with a non-blank title field
-// You might overwrite this if you want to use livequery or whatever
-// But i keep this for the ease of use
-$(function() {
-	$('*[title]').each(function() {
-		if ($(this).attr('title')!='') {
-			$(this).speechify();
-		}
-	});
-});
