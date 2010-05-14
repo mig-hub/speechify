@@ -13,25 +13,26 @@ $('script:last').after("<link rel='stylesheet' type='text/css' href='" + speechi
 		var settings = $.extend({}, defaults, options);
 		
 		return this.each(function() {
-			$(this).data('speech', this.title);
+			var $$ = $(this);
+			$$.data('speech', this.title);
 			this.title = ''; // Empty the title to disable the default tooltip
-			$(this).hover(function(e){ // Rollover
-				$("body").append("<img src='" + spike_file + "' id='speechify_spike' /><p id='speechify'>" + $(this).data('speech') + "</p>"); // Add tooltip and spike to page							  							  
+			$$.hover(function(e){ // Rollover
+				$("body").append("<img src='" + spike_file + "' id='speechify_spike' /><p id='speechify'>" + $$.data('speech') + "</p>"); // Add tooltip and spike to page							  							  
 				$("#speechify, #speechify_spike").show();		
 		    },
 				function(){		
 					$("#speechify, #speechify_spike").remove();
 		  });
-			$(this).mousemove(function(e){ // Position
+			$$.mousemove(function(e){ // Position
 				$("#speechify_spike")
-					.css("bottom",($(window).height() - ($(this).offset().top)) + "px")
+					.css("bottom",($(window).height() - ($$.offset().top)) + "px")
 					.css("left",(e.pageX - 8) + "px");
 				$("#speechify")
-					.css("bottom",($(window).height() - ($(this).offset().top)) + "px")
+					.css("bottom",($(window).height() - ($$.offset().top)) + "px")
 					.css("left",(e.pageX - 8 - 7) + "px");
 			});
-			$(this).click(function(e){ // Make it disapear on click to avoid it to stay on some Ajax tricks
-				$(this).mouseout();
+			$$.click(function(e){ // Make it disapear on click to avoid it to stay on some Ajax tricks
+				$$.mouseout();
 			});
 		});
 	}
