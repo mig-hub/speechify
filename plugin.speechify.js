@@ -14,26 +14,28 @@ $('script:last').after("<link rel='stylesheet' type='text/css' href='" + speechi
 		
 		return this.each(function() {
 			var $$ = $(this);
-			$$.data('speech', this.title);
-			this.title = ''; // Empty the title to disable the default tooltip
-			$$.hover(function(e){ // Rollover
-				$("body").append("<img src='" + spike_file + "' id='speechify_spike' /><p id='speechify'>" + $$.data('speech') + "</p>"); // Add tooltip and spike to page							  							  
-				$("#speechify, #speechify_spike").show();		
-		    },
-				function(){		
-					$("#speechify, #speechify_spike").remove();
-		  });
-			$$.mousemove(function(e){ // Position
-				$("#speechify_spike")
-					.css("bottom",($(window).height() - ($$.offset().top)) + "px")
-					.css("left",(e.pageX - 8) + "px");
-				$("#speechify")
-					.css("bottom",($(window).height() - ($$.offset().top)) + "px")
-					.css("left",(e.pageX - 8 - 7) + "px");
-			});
-			$$.click(function(e){ // Make it disapear on click to avoid it to stay on some Ajax tricks
-				$$.mouseout();
-			});
+			if ($$.attr('title')!='') {
+				$$.data('speech', this.title);
+				this.title = ''; // Empty the title to disable the default tooltip
+				$$.hover(function(e){ // Rollover
+					$("body").append("<img src='" + spike_file + "' id='speechify_spike' /><p id='speechify'>" + $$.data('speech') + "</p>"); // Add tooltip and spike to page							  							  
+					$("#speechify, #speechify_spike").show();		
+			    },
+					function(){		
+						$("#speechify, #speechify_spike").remove();
+			  });
+				$$.mousemove(function(e){ // Position
+					$("#speechify_spike")
+						.css("bottom",($(window).height() - ($$.offset().top)) + "px")
+						.css("left",(e.pageX - 8) + "px");
+					$("#speechify")
+						.css("bottom",($(window).height() - ($$.offset().top)) + "px")
+						.css("left",(e.pageX - 8 - 7) + "px");
+				});
+				$$.click(function(e){ // Make it disapear on click to avoid it to stay on some Ajax tricks
+					$$.mouseout();
+				});
+			}
 		});
 	}
 	
@@ -44,15 +46,11 @@ $('script:last').after("<link rel='stylesheet' type='text/css' href='" + speechi
 		$(function() {
 			if ($.fn.livequery) {
 				$('*[title]').livequery(function() {
-					if ($(this).attr('title')!='') {
-						$(this).speechify(options);
-					}
+					$(this).speechify(options);
 				});
 			} else {
 				$('*[title]').each(function() {
-					if ($(this).attr('title')!='') {
-						$(this).speechify(options);
-					}
+					$(this).speechify(options);
 				});
 			}
 		});	
