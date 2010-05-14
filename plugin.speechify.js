@@ -1,4 +1,4 @@
-// (c) 2009 - 2010 Mickael Riga
+// (c) 2009 - 2010 Mickael Riga - See MIT_LICENSE file for details
 // Speechify.js version 2
 
 ;(function($) {
@@ -39,8 +39,7 @@
 				});
 			}
 		});
-	}
-	
+	}	
 	$.speechify = function(options) {
 		// Assign elements with a non-blank title field
 		// You might overwrite this if you want to use livequery or whatever
@@ -55,8 +54,6 @@
 					$(this).speechify(options);
 				});
 			}
-		});	
-		
-	}
-	
+		});			
+	}	
 })(jQuery);
