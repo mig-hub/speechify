@@ -1,6 +1,4 @@
-tooltip_offset = 10; // Right offset
 speechify_path = $('script[src*=speechify.js]').attr('src').replace(/[^\/]*$/, ''); // Trick to find out the url of the plugin
-spike_file = speechify_path + 'tooltip_spike.gif'; // Url of the spike
 $('script:last').after("<link rel='stylesheet' type='text/css' href='" + speechify_path + "tooltip.css' />"); // Add CSS file
 
 ;(function($) {
@@ -18,7 +16,11 @@ $('script:last').after("<link rel='stylesheet' type='text/css' href='" + speechi
 				$$.data('speech', this.title);
 				this.title = ''; // Empty the title to disable the default tooltip
 				$$.hover(function(e){ // Rollover
-						$("body").append("<div id='speechify_wrapper'><div id='speechify'>" + $$.data('speech') + "</div><img src='" + spike_file + "' id='speechify_spike' /></div>"); // Add tooltip and spike to page							  							  	
+						$("body").append("<div id='speechify_wrapper'><div id='speechify'>" + $$.data('speech') + "</div><div id='speechify_spike'></div></div>"); // Add tooltip and spike to page
+						$('#speechify_spike').css({
+							position: 'relative', width: '0px', height: '0px', left: '5px',
+							borderTop: '5px solid black', borderLeft: '5px solid chartreuse', borderRight: '5px solid chartreuse',
+						});				  							  	
 			    },
 					function(){		
 						$("#speechify_wrapper").remove();
