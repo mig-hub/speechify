@@ -1,4 +1,4 @@
-#tooltip{
+#speechify{
 	position: absolute;
 	border: 0;
 	margin-bottom: 8px;
@@ -13,7 +13,7 @@
 	font-size: 11px;
 }	
 
-#tooltip_spike {
+#speechify_spike {
 	position: absolute;
 	display: none;
 }

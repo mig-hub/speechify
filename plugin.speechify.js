@@ -10,17 +10,17 @@ $('script:last').after("<link rel='stylesheet' type='text/css' href='" + speechi
 			$(this).data('speech', this.title);
 			this.title = ''; // Empty the title to disable the default tooltip
 			$(this).hover(function(e){ // Rollover
-				$("body").append("<img src='" + spike_file + "' id='tooltip_spike' /><p id='tooltip'>" + $(this).data('speech') + "</p>"); // Add tooltip and spike to page							  							  
-				$("#tooltip, #tooltip_spike").show();		
+				$("body").append("<img src='" + spike_file + "' id='speechify_spike' /><p id='speechify'>" + $(this).data('speech') + "</p>"); // Add tooltip and spike to page							  							  
+				$("#speechify, #speechify_spike").show();		
 		    },
 				function(){		
-					$("#tooltip, #tooltip_spike").remove();
+					$("#speechify, #speechify_spike").remove();
 		  });
 			$(this).mousemove(function(e){ // Position
-				$("#tooltip_spike")
+				$("#speechify_spike")
 					.css("bottom",($(window).height() - ($(this).offset().top)) + "px")
 					.css("left",(e.pageX - 8) + "px");
-				$("#tooltip")
+				$("#speechify")
 					.css("bottom",($(window).height() - ($(this).offset().top)) + "px")
 					.css("left",(e.pageX - 8 - 7) + "px");
 			});
