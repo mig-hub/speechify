@@ -6,7 +6,7 @@ $('script:last').after("<link rel='stylesheet' type='text/css' href='" + speechi
 		
 		// Settings
 		var defaults = {
-			colorBehindTooltip: 'white',
+			color: 'white', backgroundColor: 'black', padding: '5px', fontFamily: 'sans-serif', fontSize: '11px',
 		};
 		var settings = $.extend({}, defaults, options);
 		
@@ -17,10 +17,11 @@ $('script:last').after("<link rel='stylesheet' type='text/css' href='" + speechi
 				this.title = ''; // Empty the title to disable the default tooltip
 				$$.hover(function(e){ // Rollover
 						$("body").append("<div id='speechify_wrapper'><div id='speechify'>" + $$.data('speech') + "</div><div id='speechify_spike'></div></div>"); // Add tooltip and spike to page
-						var $speechify = $('#speechify');
+						$('#speechify_wrapper').css('position', 'absolute');
+						var $speechify = $('#speechify').css(settings).css('border', '0px');
 						$('#speechify_spike').css({
 							position: 'relative', width: '0px', height: '0px', left: $speechify.css('padding-left'),
-							borderStyle: 'solid', borderWidth: $speechify.css('padding-left'), borderColor: 'black transparent transparent transparent'
+							borderStyle: 'solid', borderWidth: $speechify.css('padding-left'), borderColor: $speechify.css('background-color')+' transparent transparent transparent'
 						});				  							  	
 			    },
 					function(){		
