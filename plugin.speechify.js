@@ -5,7 +5,8 @@
 		
 		// Settings
 		var defaults = {
-			color: 'white', backgroundColor: 'black', padding: '5px', fontFamily: 'sans-serif', fontSize: '11px',
+			color: 'white', backgroundColor: 'black', padding: '5px', fontFamily: 'sans-serif', fontSize: '11px', fontWeight: 'normal',
+			'border-radius': '5px', '-moz-border-radius': '5px', '-webkit-border-radius': '5px',
 		};
 		var settings = $.extend({}, defaults, options);
 		
