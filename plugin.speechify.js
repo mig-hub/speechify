@@ -17,18 +17,20 @@ $('script:last').after("<link rel='stylesheet' type='text/css' href='" + speechi
 				this.title = ''; // Empty the title to disable the default tooltip
 				$$.hover(function(e){ // Rollover
 						$("body").append("<div id='speechify_wrapper'><div id='speechify'>" + $$.data('speech') + "</div><div id='speechify_spike'></div></div>"); // Add tooltip and spike to page
+						var $speechify = $('#speechify');
 						$('#speechify_spike').css({
-							position: 'relative', width: '0px', height: '0px', left: '5px',
-							borderTop: '5px solid black', borderLeft: '5px solid chartreuse', borderRight: '5px solid chartreuse',
+							position: 'relative', width: '0px', height: '0px', left: $speechify.css('padding-left'),
+							borderStyle: 'solid', borderWidth: $speechify.css('padding-left'), borderColor: 'black transparent transparent transparent'
 						});				  							  	
 			    },
 					function(){		
 						$("#speechify_wrapper").remove();
 			  });
 				$$.mousemove(function(e){ // Position
+					var $speechify = $('#speechify');
 					$("#speechify_wrapper")
 						.css("bottom",($(window).height() - ($$.offset().top)) + "px")
-						.css("left",(e.pageX) + "px");
+						.css("left",(e.pageX - parseInt($speechify.css('padding-left'))*2) + "px");
 				});
 				$$.click(function(e){ // Make it disapear on click to avoid it to stay on some Ajax tricks
 					$$.mouseout();
