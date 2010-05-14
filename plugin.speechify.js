@@ -1,5 +1,4 @@
-speechify_path = $('script[src*=speechify.js]').attr('src').replace(/[^\/]*$/, ''); // Trick to find out the url of the plugin
-$('script:last').after("<link rel='stylesheet' type='text/css' href='" + speechify_path + "tooltip.css' />"); // Add CSS file
+
 
 ;(function($) {
 	$.fn.speechify = function(options) {
