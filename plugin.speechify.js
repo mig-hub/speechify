@@ -1,4 +1,5 @@
-
+// (c) 2009 - 2010 Mickael Riga
+// Speechify.js version 2
 
 ;(function($) {
 	$.fn.speechify = function(options) {
