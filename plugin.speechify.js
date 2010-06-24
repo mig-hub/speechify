@@ -42,8 +42,6 @@
 	}	
 	$.speechify = function(options) {
 		// Assign elements with a non-blank title field
-		// You might overwrite this if you want to use livequery or whatever
-		// But i keep this for the ease of use
 		$(function() {
 			if ($.fn.livequery) {
 				$('*[title]').livequery(function() {
