@@ -43,10 +43,10 @@ Otherwise, the code of the plugin itself is once again very basic, and would be 
 MAIN DIFFERENCES WITH VERSION 1
 -------------------------------
 
-- No need for css and image anymore. Everything is done in the plugin file.
-- Speed improvement / Refactoring
-- Livequery aware
-- Reorganization of the code that will allow things in the future, but force you to trigger speechify with $.speechify()
+* No need for css and image anymore. Everything is done in the plugin file.
+* Speed improvement / Refactoring
+* Livequery aware
+* Reorganization of the code that will allow things in the future, but force you to trigger speechify with $.speechify()
 
 Only good things really. Yummy!
 
