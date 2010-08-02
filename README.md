@@ -1,15 +1,17 @@
-“The Times is speechless, and it takes three columns to express its speechlessness” -- Winston Churchill
+"The Times is speechless, and it takes three columns to express its speechlessness" -- Winston Churchill
 
 "Montre au-dehors, toute l'ardeur de ton désir, en sorte 
 qu'elle jaillisse, portant fidèlement l'empreinte de ton âme; non pour que tes paroles 
 fassent mieux connaître ce que nous savons déjà, mais pour que tu t'habitues à dire 
 quelle est ta soif, afin que l'on te verse à boire." -- Dante
 
-= WHAT IS SPEECHIFY ?
+WHAT IS SPEECHIFY ?
+-------------------
 
 The main idea is to have no more than a nice replacement for browser tooltips generated via the title tag.
 
-= HOW TO USE IT ?
+HOW TO USE IT ?
+---------------
 
 Just add the plugin after the jQuery library, call the function $.speechify() and it's gonna turn all the elements of your page that have got a title tag into a speechified field.
 
@@ -17,7 +19,8 @@ If you use the livequery plugin, speechify will detect it and will take care of 
 
 See the file example.html for more details.
 
-= HOW CAN I CUSTOMIZE IT ?
+HOW CAN I CUSTOMIZE IT ?
+------------------------
 
 This is very simple. Speechify accepts your css hash as an argument.
 
@@ -37,7 +40,8 @@ The default options are:
 
 Otherwise, the code of the plugin itself is once again very basic, and would be easy to modify, should you have to.
 
-= MAIN DIFFERENCES WITH VERSION 1
+MAIN DIFFERENCES WITH VERSION 1
+-------------------------------
 
 No need for css and image anymore. Everything is done in the plugin file.
 Speed improvement / Refactoring
@@ -46,11 +50,13 @@ Reorganization of the code that will allow things in the future, but force you t
 Added a minified version (speechify is already small though)
 Only good things really
 
-= CAN I HELP ?
+CAN I HELP ?
+------------
 
 Of course you can. Any contribution is considered in order to make this plugin better, more complete or easier to use.
 
-= KNOWN ISSUES
+KNOWN ISSUES
+------------
 
 It does not mean that you can't use older versions, but Speechify has been tested with :
 
@@ -60,7 +66,7 @@ Firefox 3.0.15
 IE8 (puke)
 
 There are CSS3 features (rounded corners) but that should not break the plugin without CSS2.
-Another thing is transparency on spikes. I will have a look and see what i can do to make it degrade gracefully when this feature is not supported.
+Another thing is transparency on spikes. I will have a look and see what I can do to make it degrade gracefully when this feature is not supported.
 The only known issue is when using it on a textfield on Firefox. No big deal but it shows spike and tooltip at the wrong place when rolling other the top edge. 
 
 -
