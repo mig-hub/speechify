@@ -1,9 +1,9 @@
-"The Times is speechless, and it takes three columns to express its speechlessness" -- Winston Churchill
+> "The Times is speechless, and it takes three columns to express its speechlessness" -- Winston Churchill
 
-"Montre au-dehors, toute l'ardeur de ton désir, en sorte 
-qu'elle jaillisse, portant fidèlement l'empreinte de ton âme; non pour que tes paroles 
-fassent mieux connaître ce que nous savons déjà, mais pour que tu t'habitues à dire 
-quelle est ta soif, afin que l'on te verse à boire." -- Dante
+> "Montre au-dehors, toute l'ardeur de ton désir, en sorte 
+> qu'elle jaillisse, portant fidèlement l'empreinte de ton âme; non pour que tes paroles 
+> fassent mieux connaître ce que nous savons déjà, mais pour que tu t'habitues à dire 
+> quelle est ta soif, afin que l'on te verse à boire." -- Dante
 
 WHAT IS SPEECHIFY ?
 -------------------
@@ -43,12 +43,12 @@ Otherwise, the code of the plugin itself is once again very basic, and would be 
 MAIN DIFFERENCES WITH VERSION 1
 -------------------------------
 
-No need for css and image anymore. Everything is done in the plugin file.
-Speed improvement / Refactoring
-Livequery aware
-Reorganization of the code that will allow things in the future, but force you to trigger speechify with $.speechify()
-Added a minified version (speechify is already small though)
-Only good things really
+- No need for css and image anymore. Everything is done in the plugin file.
+- Speed improvement / Refactoring
+- Livequery aware
+- Reorganization of the code that will allow things in the future, but force you to trigger speechify with $.speechify()
+
+Only good things really. Yummy!
 
 CAN I HELP ?
 ------------
@@ -69,6 +69,7 @@ There are CSS3 features (rounded corners) but that should not break the plugin w
 Another thing is transparency on spikes. I will have a look and see what I can do to make it degrade gracefully when this feature is not supported.
 The only known issue is when using it on a textfield on Firefox. No big deal but it shows spike and tooltip at the wrong place when rolling other the top edge. 
 
--
+COPYRIGHT
+---------
 
 Copyright (c) 2009 - 2010 Mickael Riga. See MIT_LICENSE file for details.
