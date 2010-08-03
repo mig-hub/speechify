@@ -11,7 +11,7 @@
 		};
 		var settings = $.extend({}, defaults, options);
 		
-		return this.each(function() {
+		var give_speech = function() {
 			var $$ = $(this);
 			if ($$.attr('title')!='') {
 				$$.data('speech', this.title);
@@ -38,20 +38,19 @@
 					$$.mouseout();
 				});
 			}
-		});
+		}
+	
+		if ($.fn.livequery) {
+			return this.livequery(give_speech);
+		}	else {
+			return this.each(give_speech);
+		}
+	
 	}	
 	$.speechify = function(options) {
 		// Assign elements with a non-blank title field
 		$(function() {
-			if ($.fn.livequery) {
-				$('*[title]').livequery(function() {
-					$(this).speechify(options);
-				});
-			} else {
-				$('*[title]').each(function() {
-					$(this).speechify(options);
-				});
-			}
+			$('*[title]').speechify(options);
 		});			
 	}	
 })(jQuery);
