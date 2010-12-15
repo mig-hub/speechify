@@ -30,15 +30,15 @@
 			  });
 				$$.mousemove(function(e){ // Position
 					var $speechify = $('#speechify');
-					$("#speechify_wrapper")
-						.css("bottom",($(window).height() - ($$.offset().top)) + "px")
-						.css("left",(e.pageX - parseInt($speechify.css('padding-left'))*2) + "px");
+					var bottom_pos = $(window).height() - $$.offset().top;
+					var left_pos = e.pageX - (parseInt($speechify.css('padding-left'))*2);
+					$("#speechify_wrapper").css({bottom: bottom_pos+"px", left: left_pos+"px"});
 				});
 				$$.click(function(e){ // Make it disapear on click to avoid it to stay on some Ajax tricks
 					$$.mouseout();
 				});
 			}
-		}
+		}; // Minified version breaks without that semi-colon
 	
 		if ($.fn.livequery) {
 			return this.livequery(give_speech);
@@ -46,7 +46,7 @@
 			return this.each(give_speech);
 		}
 	
-	}
+	}; // Minified version breaks without that semi-colon
 	
 	$.speechify = function(options) {
 		// Assign elements with a non-blank title field
