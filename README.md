@@ -1,10 +1,5 @@
 > "The Times is speechless, and it takes three columns to express its speechlessness" -- Winston Churchill
 
-> "Montre au-dehors, toute l'ardeur de ton désir, en sorte 
-> qu'elle jaillisse, portant fidèlement l'empreinte de ton âme; non pour que tes paroles 
-> fassent mieux connaître ce que nous savons déjà, mais pour que tu t'habitues à dire 
-> quelle est ta soif, afin que l'on te verse à boire." -- Dante
-
 WHAT IS SPEECHIFY ?
 -------------------
 
