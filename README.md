@@ -5,12 +5,18 @@ WHAT IS SPEECHIFY ?
 
 The main idea is to have no more than a nice replacement for browser tooltips generated via the title tag.
 
+Please note that this version works with jQuery 1.4.3
+
 HOW TO USE IT ?
 ---------------
 
 Just add the plugin after the jQuery library, call the function $.speechify() and it's gonna turn all the elements of your page that have got a title tag into a speechified field.
 
-If you use the livequery plugin, speechify will detect it and will take care of new nodes created after the page is loaded. But speechify obviously needs to be loaded after livequery.
+As opposed to the previous version which was livequery-aware, this version of speechify takes care of non-yet-created elements using jQuery(selector).live().
+
+If you want to decide what is speechified, there is selector version of the function:
+
+  $('.speechify_me').speechify();
 
 See the file example.html for more details.
 
@@ -35,15 +41,20 @@ The default options are:
 
 Otherwise, the code of the plugin itself is once again very basic, and would be easy to modify, should you have to.
 
-MAIN DIFFERENCES WITH VERSION 1
+For the placement of the tooltip, the default position is above the element but still moving horizontally.
+I found it is a good option for visibility.
+
+Nevertheless, you can pass the position along with the CSS hash.
+This is the pointer offset subhash:
+
+  $.speechify({ fontFamily: 'verdana', pointer_offset: {left: 10, bottom: 10} });
+
+Be careful though, for practicle reason, the vertical offset is given from the bottom, not the top.
+
+MAIN DIFFERENCES WITH VERSION 2
 -------------------------------
 
-* No need for css and image anymore. Everything is done in the plugin file.
-* Speed improvement / Refactoring
-* Livequery aware
-* Reorganization of the code that will allow things in the future, but force you to trigger speechify with $.speechify()
-
-Only good things really. Yummy!
+The difference is that the code has been fully refactored to be more straight forward and uses new features from jQuery 1.4.3
 
 CAN I HELP ?
 ------------
@@ -55,7 +66,7 @@ KNOWN ISSUES
 
 It does not mean that you can't use older versions, but Speechify has been tested with :
 
-jQuery 1.3.2
+jQuery 1.4.3
 Safari 4.0.2
 Firefox 3.0.15
 IE8 (puke)
@@ -67,4 +78,4 @@ The only known issue is when using it on a textfield on Firefox. No big deal but
 COPYRIGHT
 ---------
 
-Copyright (c) 2009 - 2010 Mickael Riga. See MIT_LICENSE file for details.
+Copyright (c) 2009 - 2011 Mickael Riga. See MIT_LICENSE file for details.
