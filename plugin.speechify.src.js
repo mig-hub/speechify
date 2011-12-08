@@ -1,6 +1,6 @@
 // (c) 2009 - 2011 Mickael Riga - See MIT_LICENSE file for details
 // Speechify.js version 3
-// Use jQuery 1.4.3
+// Use jQuery 1.6.2
 
 ;(function($) {
 	$.fn.speechify = function(options) {
@@ -34,11 +34,11 @@
 		$$.live({
 			'mouseenter.speechify': function() {
 				if (this.title!='') {
-					$(this).data().title = this.title;
+					$(this).data('title', this.title);
 					this.title = '';
 				}
-				if ($(this).data().title!='') {
-					$speechify.html($(this).data().title);
+				if ($(this).data('title')) {
+					$speechify.html($(this).data('title'));
 					$speechify_wrapper.show();
 				}
 			},

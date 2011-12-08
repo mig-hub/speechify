@@ -5,7 +5,7 @@ WHAT IS SPEECHIFY ?
 
 The main idea is to have no more than a nice replacement for browser tooltips generated via the title tag.
 
-Please note that this version works with jQuery 1.4.3
+Please note that this version was tested with jQuery 1.6.2
 
 HOW TO USE IT ?
 ---------------
